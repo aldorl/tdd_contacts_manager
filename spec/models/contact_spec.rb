@@ -5,6 +5,10 @@ describe Contact do
         expect(build(:contact)).to be_valid
     end
 
+    it "has three phone numbers" do
+        expect(create(:contact).phones.count).to eq 3
+    end
+
     it "is invalid without a firstname" do
         contact = build(:contact, firstname: nil)
         contact.valid?
