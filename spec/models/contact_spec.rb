@@ -39,7 +39,6 @@ describe Contact do
     end
 
     describe "filter last name by letter" do
-
         before :each do
             @smith      = create(:contact, lastname: "Smith")
             @jones      = create(:contact, lastname: "Jones")
@@ -57,7 +56,6 @@ describe Contact do
                 expect(Contact.by_letter('J')).not_to include @smith
             end
         end
-
     end
 
 end
