@@ -1,17 +1,17 @@
 class Contact < ActiveRecord::Base
-  has_many :phones
-  accepts_nested_attributes_for :phones
-  validates :phones, length: { is: 3 }
+    has_many :phones
+    accepts_nested_attributes_for :phones
+    validates :phones, length: { is: 3 }
 
-  validates :firstname, presence: true
-  validates :lastname, presence: true
-  validates :email, presence: true, uniqueness: true
+    validates :firstname, presence: true
+    validates :lastname, presence: true
+    validates :email, presence: true, uniqueness: true
 
-  def name
-    [firstname, lastname].join(' ')
-  end
+    def name
+        [firstname, lastname].join(' ')
+    end
 
-  def self.by_letter(letter)
-    where("lastname LIKE ?", "#{letter}%").order(:lastname)
-  end
+    def self.by_letter(letter)
+        where('lastname LIKE ?', "#{letter}%").order(:lastname)
+    end
 end
