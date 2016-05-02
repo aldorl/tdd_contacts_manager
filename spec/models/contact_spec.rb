@@ -5,6 +5,10 @@ describe Contact do
         expect(build(:contact)).to be_valid
     end
 
+    it "has an invalid factory" do
+        expect(build(:invalid_contact)).not_to be_valid
+    end
+
     it "has three phone numbers" do
         expect(create(:contact).phones.count).to eq 3
     end
