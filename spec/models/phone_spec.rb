@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe Phone do
+    it { should validate_uniqueness_of(:phone).scoped_to(:contact_id) }
+
     it 'does not allow duplicate phone numbers per contact' do
         contact = create(:contact)
         create(:home_phone,
