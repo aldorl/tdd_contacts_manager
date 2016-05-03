@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature 'User management' do
     scenario 'adds a new user' do
@@ -22,7 +22,7 @@ feature 'User management' do
             expect(page).to have_content 'Users'
         end
         expect(page).to have_content 'newuser@example.com'
-        
+
         # Uncomment the following line to use "Launchy" to see the html result
         # save_and_open_page
     end

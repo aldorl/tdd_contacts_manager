@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature 'About BigCo modal' do
     scenario 'toggles display of the modal about display', js: true do
